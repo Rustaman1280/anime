@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MangaFusion</title>
+  <link rel="icon" href="https://example.com/favicon.png">
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom Styles */
+    .manga-poster {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .manga-poster:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo dan Nama Situs -->
+      <div class="flex items-center space-x-2">
+        <img src="https://example.com/logo.png" alt="logo" class="h-8 w-8">
+        <span class="text-xl font-semibold">MangaFusion</span>
+      </div>
+
+      <!-- Menu Navigasi -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#" class="hover:text-gray-300">Kategori</a>
+        <a href="#" class="hover:text-gray-300">Terbaru</a>
+        <a href="#" class="hover:text-gray-300">Populer</a>
+        <a href="#" class="hover:text-gray-300">Daftar Komik</a>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="flex-1 mx-4">
+        <div class="relative">
+          <input type="text" placeholder="Cari Manga" class="w-full py-2 pl-10 pr-4 rounded-full bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-gray-400">
+          <svg class="absolute left-3 top-3 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10 2a8 8 0 105.292 14.708l4.822 4.822a1 1 0 001.415-1.415l-4.822-4.822A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Profile -->
+      <img src="https://example.com/profile.jpg" alt="Profile" class="h-8 w-8 rounded-full">
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-cover bg-center h-64" style="background-image: url('https://example.com/manga-cover.jpg')">
+    <div class="h-full flex items-center justify-center bg-black bg-opacity-50">
+      <div class="text-center">
+        <h1 class="text-4xl font-semibold text-white">New Releases</h1>
+        <a href="#" class="mt-4 inline-block px-6 py-3 bg-indigo-500 text-white rounded-full hover:bg-indigo-600">Baca Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kategori Section -->
+  <section class="container mx-auto py-8">
+    <h2 class="text-2xl font-semibold mb-6">Kategori Populer</h2>
+    <div class="flex flex-wrap gap-4">
+      <a href="#" class="px-4 py-2 bg-gray-700 text-gray-100 rounded-full hover:bg-indigo-500">Action</a>
+      <a href="#" class="px-4 py-2 bg-gray-700 text-gray-100 rounded-full hover:bg-indigo-500">Adventure</a>
+      <a href="#" class="px-4 py-2 bg-gray-700 text-gray-100 rounded-full hover:bg-indigo-500">Comedy</a>
+      <!-- Tambahkan kategori lainnya -->
+    </div>
+  </section>
+
+  <!-- Manga Grid -->
+  <section class="container mx-auto py-8">
+    <h2 class="text-2xl font-semibold mb-6">Komik Terbaru</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      <!-- Manga Item -->
+      <div class="bg-white p-4 rounded-lg shadow-lg manga-poster">
+        <img src="https://example.com/manga1.jpg" alt="Manga 1" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-lg font-medium">Judul Komik 1</h3>
+      </div>
+      <!-- Tambahkan item manga lainnya -->
+    </div>
+  </section>
+
+</body>
+</html>
