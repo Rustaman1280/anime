@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MangaFusion</title>
+  <link rel="icon" href="https://example.com/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;600&family=Noto+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Spline Sans', 'Noto Sans', sans-serif;
+    }
+
+    /* Hover effect for manga poster */
+    .manga-poster {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .manga-poster:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Custom shadow for dark mode */
+    .dark .manga-poster {
+      box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1), 0 2px 4px rgba(255, 255, 255, 0.06);
+    }
+
+    .dark .manga-poster:hover {
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3), 0 6px 6px rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="https://example.com/logo.png" alt="logo" class="h-8 w-8">
+        <span class="text-2xl font-semibold">MangaFusion</span>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="flex-1 mx-4">
+        <div class="relative">
+          <input type="text" placeholder="Search Manga" class="w-full py-2 pl-10 pr-4 rounded-full bg-gray-200 dark:bg-gray-700 border-0 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <svg class="absolute left-3 top-3 h-5 w-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10 2a8 8 0 105.292 14.708l4.822 4.822a1 1 0 001.415-1.415l-4.822-4.822A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Icons -->
+      <div class="flex items-center space-x-4">
+        <!-- Home -->
+        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-indigo-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6M5 10v10a1 1 0 001 1h3m10-1a1 1 0 001-1v-5a1 1 0 00-1-1h-3m-6 0v6"/>
+          </svg>
+        </a>
+
+        <!-- Chat -->
+        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-indigo-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m-4 4h10m5-6a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </a>
+
+        <!-- Toggle Light/Dark Mode -->
+        <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:text-indigo-500 focus:outline-none">
+          <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.485-9.485h-1M4.515 12H3m16.95 4.95l-.707-.707M6.343 6.343l-.707-.707M16.95 7.05l.707-.707M6.343 17.657l.707-.707M12 7a5 5 0 110 10 5 5 0 010-10z"/>
+          </svg>
+          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c4.418 0 8 3.582 8 8s-3.582 8-8 8a8.004 8.004 0 01-7.546-5.172A7.003 7.003 0 0012 3z"/>
+          </svg>
+        </button>
+
+        <!-- Profile -->
+        <img src="https://example.com/profile.jpg" alt="Profile" class="h-8 w-8 rounded-full">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-cover bg-center h-64" style="background-image: url('https://example.com/manga-cover.jpg')">
+    <div class="h-full flex items-center justify-center bg-black bg-opacity-50">
+      <div class="text-center">
+        <h1 class="text-4xl font-semibold text-white">New Releases</h1>
+        <a href="#" class="mt-4 inline-block px-6 py-3 bg-indigo-500 text-white rounded-full hover:bg-indigo-600">Read</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manga Grid -->
+  <section class="container mx-auto py-8">
+    <h2 class="text-2xl font-semibold mb-6">Latest Manga</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      <!-- Manga Item -->
+      <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg manga-poster">
+        <img src="https://example.com/manga1.jpg" alt="Manga 1" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-lg font-medium">Manga Title 1</h3>
+      </div>
+      <!-- More Manga Items... -->
+    </div>
+  </section>
+
+  <!-- JavaScript for theme toggle -->
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+      moonIcon.classList.add('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
+    }
+
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      if (document.documentElement.classList.contains('dark')) {
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
