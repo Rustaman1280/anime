@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MangaFusion</title>
+  <link rel="icon" href="https://example.com/favicon.png">
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom Styles */
+    body {
+      background-color: #1b1b1b;
+      color: #d1d5db;
+    }
+    .manga-poster {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .manga-poster:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.3);
+    }
+    /* Scrollable Manga Section */
+    .scrollable {
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none; /* For Firefox */
+    }
+    .scrollable::-webkit-scrollbar {
+      display: none; /* For Chrome, Safari, and Edge */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo dan Nama Situs -->
+      <div class="flex items-center space-x-2">
+        <img src="logo.png" alt="logo" class="h-8 w-8">
+      </div>
+
+      <!-- Hamburger Menu -->
+      <div class="block md:hidden">
+        <button id="hamburger" class="text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu Navigasi -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#" class="hover:text-gray-300">Kategori</a>
+        <a href="#" class="hover:text-gray-300">Terbaru</a>
+        <a href="#" class="hover:text-gray-300">Populer</a>
+        <a href="#" class="hover:text-gray-300">Daftar Komik</a>
+      </div>
+    </div>
+
+    <!-- Menu Hamburger -->
+    <div id="hamburgerMenu" class="md:hidden hidden bg-gray-800 absolute top-0 right-0 w-64 h-full z-50 shadow-lg">
+      <div class="flex flex-col items-center justify-start h-full p-4">
+        <button id="hamburgerClose" class="self-end mb-4 text-white">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+        <a href="#" class="text-white py-2 hover:bg-gray-700 w-full text-center">Kategori</a>
+        <a href="#" class="text-white py-2 hover:bg-gray-700 w-full text-center">Terbaru</a>
+        <a href="#" class="text-white py-2 hover:bg-gray-700 w-full text-center">Populer</a>
+        <a href="#" class="text-white py-2 hover:bg-gray-700 w-full text-center">Daftar Komik</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Kategori Section -->
+  <section class="container mx-auto py-8">
+    <h2 class="text-2xl font-semibold mb-6 text-gray-100">Kategori Populer</h2>
+    <div class="flex flex-wrap gap-4">
+      <a href="#" class="px-4 py-2 bg-gray-700 text-gray-100 rounded-full hover:bg-indigo-500">Action</a>
+      <a href="#" class="px-4 py-2 bg-gray-700 text-gray-100 rounded-full hover:bg-indigo-500">Adventure</a>
+      <a href="#" class="px-4 py-2 bg-gray-700 text-gray-100 rounded-full hover:bg-indigo-500">Comedy</a>
+      <a href="#" class="px-4 py-2 bg-gray-700 text-gray-100 rounded-full hover:bg-indigo-500">Drama</a>
+      <a href="#" class="px-4 py-2 bg-gray-700 text-gray-100 rounded-full hover:bg-indigo-500">Fantasy</a>
+      <a href="#" class="px-4 py-2 bg-gray-700 text-gray-100 rounded-full hover:bg-indigo-500">Romance</a>
+    </div>
+  </section>
+
+  <!-- Manga Grid -->
+  <section class="container mx-auto py-8 px-4 md:px-0">
+    <h2 class="text-2xl font-semibold mb-6 text-gray-100">Komik Terbaru</h2>
+    <div class="scrollable flex space-x-4">
+      <!-- Manga Item -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg manga-poster flex-none w-40">
+        <img src="1.jpg" alt="Manga 1" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-lg font-medium text-gray-100">Jujutsu Kaisen</h3>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg manga-poster flex-none w-40">
+        <img src="https://example.com/manga2.jpg" alt="Manga 2" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-lg font-medium text-gray-100">Judul Komik 2</h3>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg manga-poster flex-none w-40">
+        <img src="https://example.com/manga3.jpg" alt="Manga 3" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-lg font-medium text-gray-100">Judul Komik 3</h3>
+      </div>
+      <!-- Tambah komik lainnya sesuai kebutuhan -->
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-900 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 MangaFusion. All rights reserved.</p>
+      <p><a href="#" class="hover:text-gray-400">Privacy Policy</a> | <a href="#" class="hover:text-gray-400">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript untuk Menu Hamburger -->
+  <script>
+    document.getElementById('hamburger').onclick = function() {
+      document.getElementById('hamburgerMenu').classList.toggle('hidden');
+    };
+    document.getElementById('hamburgerClose').onclick = function() {
+      document.getElementById('hamburgerMenu').classList.add('hidden');
+    };
+  </script>
+</body>
+</html>
